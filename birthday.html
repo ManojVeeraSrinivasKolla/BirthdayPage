@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #ff8c00; /* Dark orange background */
+      overflow: hidden; /* Hide overflow to prevent scroll bars */
+    }
+
+    .container {
+      text-align: center;
+      padding: 50px;
+      position: relative; /* Added positioning to the container for absolute positioning of the button */
+    }
+
+    .small-photo {
+      width: 80px; /* Adjust the size as needed */
+      border-radius: 50%; /* Optional: Add a circular border to the image */
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .friend-photo {
+      width: 300px; /* Adjust the size as needed */
+      border-radius: 50%; /* Optional: Add a circular border to the image */
+      margin-bottom: 20px;
+      animation: photo-bounce 1s ease-in-out infinite; /* Extra animation for the friend photo */
+    }
+
+    .birthday-message {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .attracts {
+      font-size: 30px;
+      color: #e44d26; /* Attractive color */
+      font-weight: bold;
+      animation: text-color-change 2s ease-in-out infinite alternate; /* Extra animation for text color */
+    }
+
+    .extra-text {
+      font-size: 18px;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    /* Extra designs */
+    .confetti {
+      background-image: url('https://i.imgur.com/5ldJj5X.png'); /* Confetti image */
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+      display: inline-block;
+      animation: confetti-fall 1s linear infinite;
+    }
+
+    /* Added styles for the audio button */
+    #audioButton {
+      background-color: #4caf50; /* Green background color */
+      color: white;
+      border: none;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    @keyframes balloon-rise {
+      0% {
+        transform: translateY(100vh);
+      }
+      100% {
+        transform: translateY(-100vh);
+      }
+    }
+
+    @keyframes photo-bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes text-color-change {
+      0%, 100% {
+        color: #e44d26;
+      }
+      50% {
+        color: #ffa07a; /* Lighter color during animation */
+      }
+    }
+  </style>
+  <title>🎉 Happy Birthday, YESUBU REDDY! 🎂</title>
+</head>
+<body>
+  <div class="container">
+    <img src="./images/birthday1photo.jpg.jpeg" alt="Small Passport Photo" class="small-photo">
+    <img src="./images/birthdayphoto.jpg.jpeg" alt="Friend's Photo" class="friend-photo">
+    <h1 class="birthday-message">🎉 Happy Birthday, YESUBU REDDY! 🎂</h1>
+    <p class="birthday-message">Wishing you a day filled with joy, laughter, and all the things that make you smile!</p>
+    <p class="attracts">WISHING FROM REDDY'S FAN BASE 🎉🎉🎉 <span class="confetti"></span></p>
+    <p class="extra-text">May your year be filled with amazing moments, great achievements, and lots of love and happiness. Cheers to another fantastic year of your life!</p>
+
+    <!-- Add the audio element with the source of your birthday audio -->
+    <audio id="birthdayAudio" loop>
+        <source src="./AUDIO/AUDIOO.mp3" type="audio/mp3">
+        <source src="./AUDIO/AUDIOO.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Add a button to play/pause the audio -->
+    <button id="audioButton" onclick="toggleAudio()">Click on Me to Play the Birthday Song</button>
+
+    <script>
+      // JavaScript function to play/pause the audio
+      function toggleAudio() {
+        var audio = document.getElementById('birthdayAudio');
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
